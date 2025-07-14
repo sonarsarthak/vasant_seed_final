@@ -131,13 +131,15 @@ a:hover {
     background: var(--secondary);
     color: var(--text-dark);
     border: 2px solid var(--secondary);
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3), 0 0 20px 4px rgba(255, 215, 0, 0.25);
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
 }
 
 .btn-primary:hover {
     background: #FFE44D;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px 0 rgba(255, 215, 0, 0.6), 0 0 40px 8px rgba(255, 215, 0, 0.45);
 }
 
 .btn-secondary {
@@ -1706,5 +1708,36 @@ textarea.form-control {
     .tips-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
+    }
+}
+
+.product-highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    align-items: stretch;
+    margin-top: 2rem;
+}
+.product-highlight-grid .product-card {
+    max-width: 320px;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    box-shadow: 0 6px 18px rgba(125, 170, 50, 0.10);
+}
+.product-highlight-grid .product-image {
+    height: 180px;
+}
+@media (max-width: 700px) {
+    .product-highlight-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .product-highlight-grid .product-card {
+        max-width: 100%;
+    }
+    .product-highlight-grid .product-image {
+        height: 140px;
     }
 }
