@@ -1727,9 +1727,15 @@ textarea.form-control {
     box-shadow: 0 6px 18px rgba(125, 170, 50, 0.10);
 }
 .product-highlight-grid .product-image {
-    height: 180px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    background: #fff;
+    display: block;
+    border-radius: 12px 12px 0 0;
 }
-@media (max-width: 700px) {
+@media (max-width: 900px) {
     .product-highlight-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -1738,6 +1744,8 @@ textarea.form-control {
         max-width: 100%;
     }
     .product-highlight-grid .product-image {
-        height: 140px;
+        aspect-ratio: 4/3;
+        height: auto;
+        max-height: 220px;
     }
 }
