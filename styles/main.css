@@ -143,8 +143,8 @@ a:hover {
 }
 
 .btn-secondary {
-    background: transparent;
-    color: white;
+    background: white;
+    color: rgb(16, 16, 81);
     border: 2px solid white;
 }
 
@@ -214,7 +214,7 @@ section {
 .nav {
     background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    padding: 1rem 0;
+    padding: 0.2rem 0;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
@@ -252,7 +252,7 @@ section {
     font-weight: 500;
     transition: var(--transition);
     position: relative;
-    padding: 0.5rem 0;
+    padding: 0.rem 0;
 }
 
 .nav-links a::after {
@@ -377,6 +377,7 @@ section {
 
 .hero-content h1 {
     margin-bottom: var(--spacing-md);
+    color: rgb(255, 255, 2);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 

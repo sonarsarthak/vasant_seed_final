@@ -74,48 +74,120 @@
     transform: scale(1.02);
 }
 
-.play-overlay {
+/* Hover overlay for play indication */
+.video-thumbnail::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 1;
-    transition: var(--transition);
-    z-index: 2;
-}
-
-.video-card.playing .play-overlay {
+    background: rgba(0, 0, 0, 0.3);
     opacity: 0;
+    transition: var(--transition);
+    z-index: 1;
     pointer-events: none;
 }
 
-/* Video controls styling */
+.video-card:hover .video-thumbnail::before {
+    opacity: 1;
+}
+
+/* Small play indicator on hover */
+.video-thumbnail::after {
+    content: '▶';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2rem;
+    opacity: 0;
+    transition: var(--transition);
+    z-index: 2;
+    pointer-events: none;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.video-card:hover .video-thumbnail::after {
+    opacity: 1;
+}
+
+.video-card.playing .video-thumbnail::before,
+.video-card.playing .video-thumbnail::after {
+    opacity: 0;
+}
+
+/* Video controls styling - smaller and more subtle */
 .video-thumbnail video::-webkit-media-controls {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .video-thumbnail video::-webkit-media-controls-panel {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    margin: 8px;
 }
 
 .video-thumbnail video::-webkit-media-controls-play-button {
     background-color: var(--primary);
     border-radius: 50%;
+    width: 32px;
+    height: 32px;
 }
 
 .video-thumbnail video::-webkit-media-controls-timeline {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    height: 4px;
 }
 
 .video-thumbnail video::-webkit-media-controls-current-time-display,
 .video-thumbnail video::-webkit-media-controls-time-remaining-display {
     color: white;
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+/* Hide controls by default, show on hover/focus */
+.video-thumbnail video::-webkit-media-controls-panel {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-card:hover .video-thumbnail video::-webkit-media-controls-panel,
+.video-card:focus-within .video-thumbnail video::-webkit-media-controls-panel,
+.video-card.playing .video-thumbnail video::-webkit-media-controls-panel {
+    opacity: 1;
+}
+
+/* Mobile video controls - always visible on mobile */
+@media (max-width: 768px) {
+    .video-thumbnail video::-webkit-media-controls-panel {
+        opacity: 1;
+    }
+    
+    .video-thumbnail video::-webkit-media-controls-play-button {
+        width: 40px;
+        height: 40px;
+    }
+    
+    /* Ensure video controls are touch-friendly on mobile */
+    .video-thumbnail video::-webkit-media-controls-panel {
+        padding: 8px;
+        margin: 4px;
+    }
+    
+    /* Disable hover effects on mobile */
+    .video-card:hover .video-thumbnail::before,
+    .video-card:hover .video-thumbnail::after {
+        opacity: 0;
+    }
+    
+    /* Show play indicator on mobile when video is paused */
+    .video-card:not(.playing) .video-thumbnail::after {
+        opacity: 0.8;
+    }
 }
 
 /* Ensure video is bright and visible */
@@ -128,27 +200,32 @@
     filter: brightness(1.2) contrast(1.1);
 }
 
-.play-button {
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary);
-    font-size: 2rem;
-    transition: var(--transition);
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+/* Cross-browser video controls styling */
+.video-thumbnail video::-moz-media-controls {
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
-.play-button:hover {
-    background: var(--primary);
-    color: white;
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+.video-thumbnail video::-moz-media-controls-panel {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    margin: 8px;
 }
+
+/* Firefox specific controls */
+.video-thumbnail video::-moz-media-controls-play-button {
+    background-color: var(--primary);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+}
+
+/* Ensure controls are visible when video is playing */
+.video-card.playing .video-thumbnail video::-webkit-media-controls-panel,
+.video-card.playing .video-thumbnail video::-moz-media-controls-panel {
+    opacity: 1;
+}
+
+/* Remove old play button styles - no longer needed */
 
 .video-overlay {
     position: absolute;
@@ -387,7 +464,7 @@
     pointer-events: none;
 }
 
-.video-card.loading .play-button {
+.video-card.loading .video-thumbnail::after {
     animation: pulse 1.5s infinite;
 }
 

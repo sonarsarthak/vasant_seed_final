@@ -4,27 +4,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // Video Functionality
     const videoCards = document.querySelectorAll('.video-card');
 
-    // Handle video play functionality
+    // Handle video play functionality with hover-to-play
     videoCards.forEach(card => {
         const video = card.querySelector('video');
-        const playButton = card.querySelector('.play-button');
-        const playOverlay = card.querySelector('.play-overlay');
+        let hoverTimeout;
 
-        // Play video when clicking play button
-        if (playButton) {
-            playButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                if (video.paused) {
+        // Hover to play functionality
+        card.addEventListener('mouseenter', function() {
+            if (video.paused) {
+                hoverTimeout = setTimeout(() => {
                     video.play();
                     card.classList.add('playing');
-                } else {
-                    video.pause();
-                    card.classList.remove('playing');
-                }
-            });
-        }
+                }, 500); // 500ms delay before auto-play on hover
+            }
+        });
+
+        card.addEventListener('mouseleave', function() {
+            if (hoverTimeout) {
+                clearTimeout(hoverTimeout);
+            }
+            // Don't auto-pause on mouse leave - let user control with video controls
+        });
 
         // Handle video events
         video.addEventListener('play', function() {
@@ -50,6 +50,36 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
             });
+        });
+
+        // Click to play/pause functionality for mobile
+        card.addEventListener('click', function(e) {
+            // Only handle clicks on the video thumbnail area
+            if (e.target.closest('.video-thumbnail')) {
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            }
+        });
+
+        // Touch events for mobile
+        card.addEventListener('touchstart', function(e) {
+            // Prevent default touch behavior to avoid conflicts
+            if (e.target.closest('.video-thumbnail')) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        // Ensure video loads properly
+        video.addEventListener('loadedmetadata', function() {
+            card.classList.remove('loading');
+        });
+
+        video.addEventListener('error', function() {
+            card.classList.remove('loading');
+            console.log('Video failed to load:', video.src);
         });
     });
 
