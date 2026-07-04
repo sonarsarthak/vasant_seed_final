@@ -62,46 +62,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Styles --> 
-    <style>
-        /* Critical CSS: Navigation and Hero Section */
-        body { font-family: 'Poppins', sans-serif; color: #2c3e50; margin:0; }
-        .nav { background: rgba(255,255,255,0.95); position:fixed; top:0; left:0; right:0; z-index:1000; box-shadow:0 2px 20px rgba(0,0,0,0.1); padding:1rem 0; }
-        .container { width:100%; max-width:1400px; margin:0 auto; padding:0 2rem; }
-        .nav-container { display:flex; justify-content:space-between; align-items:center; }
-        .logo img { height:50px; transition:all 1s ease; }
-        .nav-links { display:flex; gap:2rem; list-style:none; align-items:center; }
-        .nav-links a { color:#2c3e50; text-decoration:none; font-weight:500; transition:all 1s ease; position:relative; padding:0.5rem 0; }
-        .nav-cta { margin-left:1.5rem; }
-        .mobile-menu-btn { display:none; background:none; border:none; cursor:pointer; padding:0.5rem; }
-        .hero { min-height:100vh; display:flex; align-items:center; position:relative; overflow:hidden; padding-top:80px; }
-        .hero-bg { position:absolute; top:0; left:0; width:100%; height:100%; z-index:-1; }
-        .hero-bg-img { width:100%; height:100%; object-fit:cover; }
-        .hero-content { text-align:center; color:white; max-width:800px; margin:0 auto; }
-        .hero-content h1 { font-size:clamp(2.5rem,6vw,3.5rem); font-weight:700; margin-bottom:1.5rem; text-shadow:2px 2px 4px rgba(0,0,0,0.3); }
-        .hero-content p { font-size:1.3rem; margin-bottom:2rem; opacity:0.95; }
-        .hero-buttons { display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap; }
-        .btn { padding:1rem 2.5rem; border-radius:50px; font-weight:600; text-transform:uppercase; letter-spacing:1px; transition:all 1s ease; text-decoration:none; display:inline-block; font-size:0.9rem; border:none; cursor:pointer; }
-        .btn-primary { background:#FFD700; color:#2c3e50; border:2px solid #FFD700; box-shadow:0 4px 15px rgba(255,215,0,0.3); }
-        .btn-secondary { background:transparent; color:white; border:2px solid white; }
-        .btn-outline { background:rgb(51,178,51); color:white; border:white; }
-        @media (max-width: 768px) {
-            .container { padding:0 1rem; }
-            .nav-links { flex-direction:column; gap:1rem; }
-            .hero { padding-top:100px; }
-            .hero-content { padding:0 1rem; }
-            .hero-buttons { flex-direction:column; align-items:center; gap:1rem; }
-            .btn { width:100%; max-width:300px; text-align:center; margin-bottom:0.5rem; }
-        }
-    </style>
-    <link rel="stylesheet" href="styles/main.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="styles/main.css"></noscript>
+    <link rel="stylesheet" href="styles/main.css?v=10">
 
 </head>
 <body>
     <!-- Navigation -->
     <nav class="nav">
         <div class="container nav-container">
-            <a href="/" class="logo">
+            <a href="index.html" class="logo">
                 <img src="img/logo.webp" alt="Vasant Seeds Logo" height="50">   
             </a>
           
@@ -112,11 +80,11 @@
             </button>
             
             <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/products.html">Products</a></li>
-                <li><a href="/testimonials.html">Testimonials</a></li>
-                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <li class="nav-cta"><a href="#product" class="btn btn-primary">Shop Now</a></li>
             </ul>
         </div>
@@ -125,84 +93,176 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-bg">
-            <img src="img/herobk.webp" alt="Vibrant onion plants growing in field" class="hero-bg-img">
+            <img src="img/herobk.webp" alt="Vasant Seeds Farmer Field" class="hero-bg-img">
         </div>
-        <div class="container">
+        <div class="container hero-container-layout">
             <div class="hero-content">
-                <h1>Premium Onion Seeds for Thriving Gardens</h1>
-                <p>Best Quality Seeds • High yield • Local Grower Trusted • Long Storage</p>
-                <div class="hero-buttons">
-                    <a href="#product" class="btn btn-primary">Shop Now</a>
-                    <a href="#how-it-works" class="btn btn-secondary">Learn More</a>
-                    <a href="/planting-guide.html" class="btn btn-outline">Read Planting Guide</a>
+                <div class="hero-badge">
+                    <i class="fas fa-seedling"></i> PREMIUM QUALITY
+                </div>
+                <h1>Premium Onion Seeds<br>for <span class="highlight">Thriving Gardens</span></h1>
+                <p>
+                    High-yield, disease-resistant seeds trusted by farmers.<br>
+                    For better growth, higher profits, and a stronger tomorrow.
+                </p>
+                
+                <div class="hero-features">
+                    <div class="hero-feature-item">
+                        <div class="feature-circle-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <span>High Yield</span>
+                    </div>
+                    <div class="hero-feature-item">
+                        <div class="feature-circle-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <span>Disease Resistant</span>
+                    </div>
+                    <div class="hero-feature-item">
+                        <div class="feature-circle-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <span>Trusted by Farmers</span>
+                    </div>
+                    <div class="hero-feature-item">
+                        <div class="feature-circle-icon">
+                            <i class="fas fa-warehouse"></i>
+                        </div>
+                        <span>Long Storage Life</span>
+                    </div>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#product" class="btn btn-hero-primary">
+                        <i class="fas fa-leaf"></i> SHOP NOW
+                    </a>
+                    <a href="#how-it-works" class="btn btn-hero-secondary">
+                        <i class="fas fa-book-open"></i> LEARN MORE
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-stats-bar">
+                <div class="stat-bar-item">
+                    <div class="stat-bar-icon"><i class="fas fa-seedling"></i></div>
+                    <div class="stat-bar-info">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Years of Trust</div>
+                    </div>
+                </div>
+                <div class="stat-bar-item">
+                    <div class="stat-bar-icon"><i class="far fa-user"></i></div>
+                    <div class="stat-bar-info">
+                        <div class="stat-number">10,000+</div>
+                        <div class="stat-label">Happy Farmers</div>
+                    </div>
+                </div>
+                <div class="stat-bar-item">
+                    <div class="stat-bar-icon"><i class="fas fa-seedling"></i></div>
+                    <div class="stat-bar-info">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Quality Products</div>
+                    </div>
+                </div>
+                <div class="stat-bar-item">
+                    <div class="stat-bar-icon"><i class="fas fa-globe"></i></div>
+                    <div class="stat-bar-info">
+                        <div class="stat-number">Pan India</div>
+                        <div class="stat-label">Delivery</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Strip -->
-    <section class="features-strip">
-        <div class="container">
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <h3>High Germination</h3>
-                    <p>Allium cepa Quality</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3>Eco‑Friendly</h3>
-                    <p>Packaging</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>For Home & Commercial</h3>
-                    <p>Growers</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-sun"></i>
-                    </div>
-                    <h3>Indian Climate‑Adapted</h3>
-                    <p>Seeds</p>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Product Highlight -->
     <section class="product-highlight" id="product">
         <div class="container">
-            <div class="text-center mb-3">
+            <div class="text-center mb-5">
                 <h2>Our Premium Onion Seeds</h2>
-                <p>Experience the difference with our carefully selected, high-quality onion seeds. <a href="/products.html">See all products</a></p>
+                <p>Experience the difference with our carefully selected, high-quality onion seeds. <a href="products.html">See all products</a></p>
             </div>
-            <div class="product-highlight-grid">
-                <div class="product-card">
-                    <img src="img/product1.webp" alt="Premium Onion Seeds Pack" class="product-image">
-                    <div class="product-details">
-                        <h3 class="product-title">Bhima Shakti</h3>
-                        <ul class="product-specs">
-                            
-                        </ul>
-                        <p class="product-desc">A high-yield onion seed known for its strong adaptability, uniform bulb size, and excellent storage capacity.</p>
-                        <a href="/products.html" class="btn btn-primary">Add to Cart</a>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="img/product1.webp" alt="Bhima Shakti Onion Seeds" class="product-img">
+                        <div class="product-badge">Best Seller</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Bhima Shakti</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.8/5)</span>
+                        </div>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-seedling"></i>
+                                <span>Germination: Good Germination</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>125-135 days to harvest</span>
+                            </div>
+                        </div>
+                        <div class="product-description">
+                            <p>A high-yield onion seed known for its strong adaptability, uniform bulb size, and excellent storage capacity. Good for all types of soils.</p>
+                        </div>
+                        <div class="product-actions">
+                            <a href="contact.html?product=Bhima Shakti" class="btn btn-primary">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </a>
+                            <a href="contact.html?product=Bhima Shakti" class="btn btn-outline">
+                                <i class="fas fa-info-circle"></i> Learn More
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="product-card">
-                    <img src="img/product2.webp" alt="Nashik Red Onion Seeds Pack" class="product-image">
-                    <div class="product-details">
-                        <h3 class="product-title">Phule Samarth</h3>
-                        <ul class="product-specs">
-                        </ul>
-                        <p class="product-desc">A high-yield onion seed with excellent storage and market value, well-suited for Indian climates and commercial farming.</p>
-                        <a href="/products.html" class="btn btn-primary">Add to Cart</a>
+
+                <!-- Product 2 -->
+                <div class="product-item">
+                    <div class="product-image">
+                        <img src="img/product2.webp" alt="Phule Samarth Onion Seeds" class="product-img">
+                        <div class="product-badge">New</div>
+                    </div>
+                    <div class="product-content">
+                        <h3>Phule Samarth</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.9/5)</span>
+                        </div>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <i class="fas fa-seedling"></i>
+                                <span>Germination: Good Germination</span>
+                            </div>
+                            <div class="spec-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>90-100 days to harvest</span>
+                            </div>
+                        </div>
+                        <div class="product-description">
+                            <p>A popular onion variety known for its high yield , dark red , globe-shaped blubs and good storage capacity. Suitable for all types of soils.</p>
+                        </div>
+                        <div class="product-actions">
+                            <a href="contact.html?product=Phule Samarth" class="btn btn-primary">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </a>
+                            <a href="contact.html?product=Phule Samarth" class="btn btn-outline">
+                                <i class="fas fa-info-circle"></i> Learn More
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -236,7 +296,7 @@
                 <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-icon">
-                        <i class="fas fa-harvest"></i>
+                        <i class="fas fa-shopping-basket"></i>
                     </div>
                     <h3>Harvest & Enjoy</h3>
                     <p>Harvest fresh, flavorful onions in just 90-135 days from planting.</p>
@@ -305,24 +365,24 @@
                         <i class="fas fa-seedling"></i>
                     </div>
                     <h3>Planting Guide</h3>
-                    <p>Learn the best practices for soil preparation, seed spacing, and optimal planting times for your region. <a href="/planting-guide.html">Read our full planting guide</a>.</p>
-                    <a href="/planting-guide.html" class="btn btn-outline">Read Guide</a>
+                    <p>Learn the best practices for soil preparation, seed spacing, and optimal planting times for your region. <a href="planting-guide.html">Read our full planting guide</a>.</p>
+                    <a href="planting-guide.html" class="btn btn-outline">Read Guide</a>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">
                         <i class="fas fa-tint"></i>
                     </div>
                     <h3>Care & Watering</h3>
-                    <p>Essential tips for proper watering, fertilization, and pest management to ensure healthy growth. <a href="/products.html">See recommended products</a>.</p>
-                    <a href="/products.html" class="btn btn-outline">Learn More</a>
+                    <p>Essential tips for proper watering, fertilization, and pest management to ensure healthy growth. <a href="products.html">See recommended products</a>.</p>
+                    <a href="products.html" class="btn btn-outline">Learn More</a>
                 </div>
                 <div class="tip-card">
                     <div class="tip-icon">
                         <i class="fas fa-cut"></i>
                     </div>
                     <h3>Harvesting Tips</h3>
-                    <p>When and how to harvest your onions for maximum flavor and storage longevity.  <a href="/testimonials.html">See farmer testimonials</a>.</p>
-                    <a href="/testimonials.html" class="btn btn-outline">View Tips</a>
+                    <p>When and how to harvest your onions for maximum flavor and storage longevity.  <a href="testimonials.html">See farmer testimonials</a>.</p>
+                    <a href="testimonials.html" class="btn btn-outline">View Tips</a>
                 </div>
             </div>
         </div>
@@ -335,22 +395,92 @@
                 <h2>Helpful Resources</h2>
                 <p>Explore more about onion farming and seed quality from trusted sources:</p>
             </div>
-            <ul class="resources-list">
-                <li><a href="https://icar.org.in/" target="_blank" rel="noopener">Indian Council of Agricultural Research (ICAR)</a></li>
-                <li><a href="https://kvk.icar.gov.in/" target="_blank" rel="noopener">Krishi Vigyan Kendra (KVK)</a></li>
-                <li><a href="https://www.nfsm.gov.in/" target="_blank" rel="noopener">National Food Security Mission (NFSM)</a></li>
-                <li><a href="https://www.indiaseeds.com/" target="_blank" rel="noopener">National Seeds Corporation</a></li>
-                <li><a href="https://en.wikipedia.org/wiki/Onion" target="_blank" rel="noopener">Onion - Wikipedia</a></li>
-            </ul>
+            <div class="resources-grid">
+                <a href="https://icar.org.in/" target="_blank" rel="noopener" class="resource-card">
+                    <div class="resource-icon"><i class="fas fa-university"></i></div>
+                    <div class="resource-info">
+                        <h3>ICAR Portal</h3>
+                        <p>Indian Council of Agricultural Research</p>
+                    </div>
+                    <div class="resource-arrow"><i class="fas fa-external-link-alt"></i></div>
+                </a>
+                <a href="https://kvk.icar.gov.in/" target="_blank" rel="noopener" class="resource-card">
+                    <div class="resource-icon"><i class="fas fa-seedling"></i></div>
+                    <div class="resource-info">
+                        <h3>KVK Network</h3>
+                        <p>Krishi Vigyan Kendra extension network</p>
+                    </div>
+                    <div class="resource-arrow"><i class="fas fa-external-link-alt"></i></div>
+                </a>
+                <a href="https://www.nfsm.gov.in/" target="_blank" rel="noopener" class="resource-card">
+                    <div class="resource-icon"><i class="fas fa-landmark"></i></div>
+                    <div class="resource-info">
+                        <h3>NFSM Portal</h3>
+                        <p>National Food Security Mission updates</p>
+                    </div>
+                    <div class="resource-arrow"><i class="fas fa-external-link-alt"></i></div>
+                </a>
+                <a href="https://www.indiaseeds.com/" target="_blank" rel="noopener" class="resource-card">
+                    <div class="resource-icon"><i class="fas fa-leaf"></i></div>
+                    <div class="resource-info">
+                        <h3>NSC Portal</h3>
+                        <p>National Seeds Corporation certified guides</p>
+                    </div>
+                    <div class="resource-arrow"><i class="fas fa-external-link-alt"></i></div>
+                </a>
+                <a href="https://en.wikipedia.org/wiki/Onion" target="_blank" rel="noopener" class="resource-card">
+                    <div class="resource-icon"><i class="fab fa-wikipedia-w"></i></div>
+                    <div class="resource-info">
+                        <h3>Onion Wikipedia</h3>
+                        <p>Detailed cultivation history & varieties</p>
+                    </div>
+                    <div class="resource-arrow"><i class="fas fa-external-link-alt"></i></div>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section class="about-section">
         <div class="container">
-            <div class="about-content">
-                <h2>Who We Are</h2>
-                <p>With over three plus years of experience in seed production, Vasant Seeds is committed to providing farmers with the highest quality onion seeds backed by research and innovation. <a href="/about.html">Learn more about our story</a>. Our mission is to enhance agricultural productivity while promoting sustainable farming practices that benefit both farmers and the environment.</p>
+            <div class="about-grid">
+                <div class="about-graphic">
+                    <div class="about-brand-card">
+                        <img src="img/logo.webp" alt="Vasant Seeds Logo" class="about-brand-logo">
+                        <div class="brand-badge"><i class="fas fa-certificate"></i> Certified Quality</div>
+                        <div class="brand-experience">
+                            <span class="exp-number">3+</span>
+                            <span class="exp-text">Years of<br>Excellence</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-details">
+                    <span class="section-subtitle">ABOUT VASANT SEEDS</span>
+                    <h2>Nurturing Growth,<br>Harvesting Trust</h2>
+                    <p>With over three plus years of dedicated experience in seed production, Vasant Seeds is committed to providing farmers across India with the highest quality onion seeds, backed by rigorous research and agricultural innovation.</p>
+                    <p>Our mission is to enhance crop productivity, maximize farmer profitability, and promote sustainable farming practices that protect our environment for generations to come.</p>
+                    
+                    <div class="about-key-features">
+                        <div class="key-feature-item">
+                            <div class="key-icon"><i class="fas fa-check-circle"></i></div>
+                            <div class="key-text">
+                                <strong>High Germination Rate</strong>
+                                <span>Ensuring strong sprouts and uniform growth</span>
+                            </div>
+                        </div>
+                        <div class="key-feature-item">
+                            <div class="key-icon"><i class="fas fa-check-circle"></i></div>
+                            <div class="key-text">
+                                <strong>Certified Non-GMO Seeds</strong>
+                                <span>Safe, reliable, and premium genetic quality</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="about.html" class="btn btn-primary">
+                        Read Our Story <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -362,31 +492,40 @@
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#product">Shop</a></li>
-                        <li><a href="#growing-tips">Growing Guides</a></li>
-                        <li><a href="/contact.html">Contact</a></li>
-                        <li><a href="/about.html">Privacy</a></li>
+                        <li><a href="products.html">Shop Seeds</a></li>
+                        <li><a href="planting-guide.html">Growing Guides</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Contact Info</h3>
-                    <p>Flat no 201, prabha-vijay appartment</p>
-                    <p>vidhate nagar, Ravishankar marg, Nashik Road, Nashik</p>
-                    <p>PIN-422011</p>
-                    <p>Phone: +91 9423023411</p>
-                    <p>Email: vasantseeds22@gmail.com</p>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Flat no 201, Prabha-Vijay Appartment, Vidhate Nagar, Ravishankar Marg, Nashik Road, Nashik - 422011</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span><a href="tel:+919423023411">+91 94230 23411</a></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span><a href="mailto:vasantseeds22@gmail.com">vasantseeds22@gmail.com</a></span>
+                        </li>
+                    </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Follow Us</h3>
                     <div class="social-links">
                         <a href="https://www.instagram.com/vasant_gulabi_seeds?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
                     </div>
-                    <div class="email-signup">
-                        <input type="email" placeholder="Subscribe to our newsletter">
+                    <form class="newsletter-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                        <input type="email" placeholder="Subscribe to our newsletter" required>
                         <button type="submit">Subscribe</button>
-                    </div>
+                    </form>
                 </div>
             </div>
             <div class="footer-bottom">

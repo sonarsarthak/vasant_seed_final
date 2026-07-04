@@ -73,7 +73,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Styles -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main.css?v=10">
 
     <link rel="icon" href="img/logo.webp">
 </head>
@@ -81,7 +81,7 @@
     <!-- Navigation -->
     <nav class="nav">
         <div class="container nav-container">
-            <a href="/" class="logo">
+            <a href="index.html" class="logo">
                 <img src="img/logo.webp" alt="Vasant Seeds Logo" height="50">
             </a>
             
@@ -92,12 +92,12 @@
             </button>
             
             <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/products.html">Products</a></li>
-                <li><a href="/testimonials.html">Testimonials</a></li>
-                <li><a href="/contact.html">Contact</a></li>
-                <li class="nav-cta"><a href="/products.html" class="btn btn-primary">Shop Now</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-cta"><a href="products.html" class="btn btn-primary">Shop Now</a></li>
             </ul>
         </div>
     </nav>
@@ -222,31 +222,40 @@
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about.html">About</a></li>
-                        <li><a href="/products.html">Products</a></li>
-                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Shop Seeds</a></li>
+                        <li><a href="planting-guide.html">Growing Guides</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Contact Info</h3>
-                    <p>Flat no 201, prabha-vijay appartment</p>
-                    <p>vidhate nagar, Ravishankar marg, Nashik Road, Nashik</p>
-                    <p>PIN-422011</p>
-                    <p>Phone: +91 9423023411</p>
-                    <p>Email: vasantseeds22@gmail.com</p>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Flat no 201, Prabha-Vijay Appartment, Vidhate Nagar, Ravishankar Marg, Nashik Road, Nashik - 422011</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span><a href="tel:+919423023411">+91 94230 23411</a></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span><a href="mailto:vasantseeds22@gmail.com">vasantseeds22@gmail.com</a></span>
+                        </li>
+                    </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Follow Us</h3>
                     <div class="social-links">
                         <a href="https://www.instagram.com/vasant_gulabi_seeds?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
                     </div>
-                    <div class="email-signup">
-                        <input type="email" placeholder="Subscribe to our newsletter">
+                    <form class="newsletter-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                        <input type="email" placeholder="Subscribe to our newsletter" required>
                         <button type="submit">Subscribe</button>
-                    </div>
+                    </form>
                 </div>
             </div>
             <div class="footer-bottom">
