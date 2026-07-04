@@ -255,7 +255,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Close window when clicking outside
     document.addEventListener('click', function(e) {
-        if (!chatbotWidget.contains(e.target) && chatWindow.classList.contains('active')) {
+        // If the clicked element was detached from the DOM during event handling (e.g. option chip removed),
+        // we should not close the chat window.
+        const isAttached = e.target.isConnected !== undefined ? e.target.isConnected : document.body.contains(e.target);
+        if (isAttached && !chatbotWidget.contains(e.target) && chatWindow.classList.contains('active')) {
             chatWindow.classList.remove('active');
         }
     });
