@@ -1,0 +1,15 @@
+# robots.txt for Vasant Seeds
+# Optimized for search engines: Google, Bing, Yahoo, etc.
+
+User-agent: *
+Allow: /
+
+# Exclude potential system/config paths or redundant URLs
+Disallow: /*?*product=   # Prevent indexing of pre-filled product search/contact forms
+Disallow: /index.html    # Prevent indexing index.html as a duplicate of root /
+
+# Host
+Host: https://vasantseeds.in
+
+# Sitemap
+Sitemap: https://vasantseeds.in/sitemap.xml
