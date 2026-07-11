@@ -2287,7 +2287,7 @@ textarea.form-control {
 }
 
 .history-logo {
-    max-width: 65%;
+    max-width: 80%;
     height: auto;
     margin-bottom: 1.5rem;
     object-fit: contain;
@@ -2543,7 +2543,7 @@ textarea.form-control {
 }
 
 .about-brand-logo {
-    max-width: 70%;
+    max-width: 85%;
     height: auto;
     object-fit: contain;
 }
@@ -3355,5 +3355,263 @@ textarea.form-control {
         right: 0;
         width: 320px;
         height: 420px;
+    }
+}
+
+/* Brand Concept Section Styles */
+.brand-concept {
+    padding: 0;
+    overflow: hidden;
+}
+
+.concept-note-wrapper {
+    background: #ffffff;
+    padding: 5rem 0 4rem 0;
+    border-bottom: 1px solid rgba(45, 106, 79, 0.08);
+}
+
+.concept-logo-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.concept-main-logo {
+    max-width: 320px;
+    height: auto;
+    display: inline-block;
+}
+
+.concept-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.concept-image-col img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(45, 106, 79, 0.1);
+}
+
+.concept-text-col {
+    padding-left: 1rem;
+}
+
+.concept-subtitle {
+    display: inline-block;
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.concept-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--primary);
+}
+
+.concept-text-col h2 {
+    font-size: 2.25rem;
+    color: #1b4332;
+    margin-bottom: 1.5rem;
+    line-height: 1.25;
+}
+
+.concept-text-col p {
+    font-size: 1.15rem;
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+/* Logo Anatomy Wrapper */
+.logo-anatomy-wrapper {
+    background-color: #1b4332;
+    padding: 5rem 0;
+    color: #ffffff;
+    position: relative;
+}
+
+.anatomy-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.anatomy-header h3 {
+    font-size: 2.25rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.anatomy-header p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.anatomy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+}
+
+.anatomy-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.anatomy-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.anatomy-circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #ffffff;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+}
+
+.anatomy-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.anatomy-info h4 {
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.anatomy-info p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.anatomy-center-col {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+}
+
+.anatomy-logo-container {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+.anatomy-logo-white {
+    max-width: 100%;
+    height: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
+}
+
+.anatomy-right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: 100%;
+}
+
+/* Responsive adjustments for anatomy */
+@media (max-width: 1200px) {
+    .anatomy-grid {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .concept-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .concept-image-col img {
+        height: 320px;
+    }
+    
+    .concept-text-col {
+        padding-left: 0;
+    }
+    
+    .anatomy-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .anatomy-center-col {
+        order: -1;
+        margin-bottom: 1.5rem;
+    }
+    
+    .anatomy-right-col {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .concept-note-wrapper {
+        padding: 3.5rem 0 3rem 0;
+    }
+    
+    .concept-main-logo {
+        max-width: 260px;
+    }
+    
+    .logo-anatomy-wrapper {
+        padding: 3.5rem 0;
+    }
+    
+    .anatomy-card {
+        padding: 1.5rem;
+    }
+    
+    .anatomy-circle {
+        width: 80px;
+        height: 80px;
     }
 }
